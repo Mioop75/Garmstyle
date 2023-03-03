@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="style/reset.css" />
+		<link rel="stylesheet" href="style/style.css" />
+		<title>Гаркомстайл</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container">
+					<button class="burger">
+						<span></span>
+					</button>
+					<a href="#" class="header__logo">
+						<span>GarcomStyle</span>
+						<img src="images/logo.svg" alt="" />
+					</a>
+					<nav class="nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="#" class="nav__link nav__link--active">Главная</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Каталог</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Прайс-листы</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Новости</a>
+							</li>
+							<li class="nav__item">
+								<a href="#" class="nav__link">Контакты</a>
+							</li>
+						</ul>
+						<div class="nav__mobile">
+							<a href="#" class="nav__mobile-link">
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M16.4145 3.83637C19.0552 3.83637 21.1965 5.97762 21.1965 8.61837C21.1965 9.97512 20.631 11.1976 19.7235 12.0684L12.0007 19.8301L4.13775 11.9281C3.31275 11.0686 2.80425 9.90387 2.80425 8.61837C2.80425 5.97687 4.9455 3.83637 7.58625 3.83637C9.57525 3.83637 11.28 5.05137 12.0007 6.77937C12.7215 5.05137 14.4262 3.83637 16.4152 3.83637H16.4145ZM16.4145 3.03687C14.6557 3.03687 13.0402 3.85362 12 5.19987C10.9605 3.85362 9.345 3.03687 7.5855 3.03687C4.5075 3.03687 2.004 5.54112 2.004 8.61837C2.004 10.0644 2.55675 11.4369 3.56025 12.4824L12 20.9641L20.2897 12.6331C21.3847 11.5816 21.996 10.1521 21.996 8.61911C21.996 5.54112 19.4917 3.03762 16.4145 3.03762V3.03687Z"
+										fill="white"
+									/>
+								</svg>
+							</a>
+							<a href="#" class="nav__mobile-link">
+								<img src="images/icons/user.svg" alt="" />
+							</a>
+						</div>
+					</nav>
+					<div class="header__list">
+						<a href="#" class="header__link">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M21.4433 20.4546L15.996 15.0066C17.091 13.6896 17.7503 11.9991 17.7503 10.1534C17.7503 5.95714 14.349 2.55664 10.1535 2.55664C5.95801 2.55664 2.55676 5.95789 2.55676 10.1534C2.55676 14.3489 5.95876 17.7501 10.1535 17.7501C12 17.7501 13.6905 17.0909 15.0068 15.9959L20.454 21.4439L21.4433 20.4546ZM3.35626 10.1534C3.35626 6.40564 6.40501 3.35614 10.1535 3.35614C13.9013 3.35614 16.9508 6.40564 16.9508 10.1534C16.9508 13.9011 13.9013 16.9506 10.1535 16.9506C6.40501 16.9506 3.35626 13.9011 3.35626 10.1534Z"
+									fill="white"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="header__link">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M16.4145 3.83637C19.0552 3.83637 21.1965 5.97762 21.1965 8.61837C21.1965 9.97512 20.631 11.1976 19.7235 12.0684L12.0007 19.8301L4.13775 11.9281C3.31275 11.0686 2.80425 9.90387 2.80425 8.61837C2.80425 5.97687 4.9455 3.83637 7.58625 3.83637C9.57525 3.83637 11.28 5.05137 12.0007 6.77937C12.7215 5.05137 14.4262 3.83637 16.4152 3.83637H16.4145ZM16.4145 3.03687C14.6557 3.03687 13.0402 3.85362 12 5.19987C10.9605 3.85362 9.345 3.03687 7.5855 3.03687C4.5075 3.03687 2.004 5.54112 2.004 8.61837C2.004 10.0644 2.55675 11.4369 3.56025 12.4824L12 20.9641L20.2897 12.6331C21.3847 11.5816 21.996 10.1521 21.996 8.61911C21.996 5.54112 19.4917 3.03762 16.4145 3.03762V3.03687Z"
+									fill="white"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="header__link">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M22.9674 7.20152H6.16216L4.80541 1.60352H1.03516V2.40302H4.17616L8.07466 18.4853C7.24366 18.7275 6.63241 19.4858 6.63241 20.3955C6.63241 21.4995 7.52716 22.395 8.63191 22.395C9.73666 22.395 10.6314 21.4995 10.6314 20.3955C10.6314 19.9433 10.4754 19.5308 10.2227 19.1963H15.8379C15.5852 19.5308 15.4292 19.944 15.4292 20.3955C15.4292 21.4995 16.3239 22.395 17.4279 22.395C18.5319 22.395 19.4274 21.4995 19.4274 20.3955C19.4274 19.2908 18.5327 18.3968 17.4279 18.396H8.87566L8.48791 16.7963H19.7139L22.9667 7.20002L22.9674 7.20152ZM9.83116 20.397C9.83116 21.0585 9.29341 21.5963 8.63191 21.5963C7.97041 21.5963 7.43266 21.0585 7.43266 20.397C7.43266 19.7355 7.97041 19.1978 8.63191 19.1978C9.29341 19.1978 9.83116 19.7363 9.83116 20.397ZM18.6279 20.397C18.6279 21.0585 18.0894 21.5963 17.4279 21.5963C16.7664 21.5963 16.2287 21.0585 16.2287 20.397C16.2287 19.7355 16.7664 19.1978 17.4279 19.1978C18.0894 19.1978 18.6279 19.7363 18.6279 20.397ZM8.29441 15.9983L6.35566 8.00177H21.8522L19.1409 15.9983H8.29441Z"
+									fill="white"
+								/>
+							</svg>
+						</a>
+						<a href="#" class="header__link">
+							<img src="images/icons/user.svg" alt="" />
+						</a>
+					</div>
+				</div>
+			</header>
+			<div class="hero">
+				<div class="container">
+					<div class="hero__img">
+						<img src="images/main-mobile.jpg" alt="" />
+					</div>
+					<h1 class="hero__title">Коллекция Весна-Лето 22</h1>
+					<a href="#" class="hero__link">Смотреть коллекцию</a>
+				</div>
+			</div>
+			<main class="main">
+				<div class="collection">
+					<div class="container">
+						<div class="collection__grid">
+							<div class="collection-item">
+								<img
+									src="images/collection/1.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Бюстгалтеры</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+							<div class="collection-item">
+								<img
+									src="images/collection/2.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Трусы</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+							<div class="collection-item">
+								<img
+									src="images/collection/3.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Чулки</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+							<div class="collection-item">
+								<img
+									src="images/collection/4.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Аксессуары</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+							<div class="collection-item">
+								<img
+									src="images/collection/5.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Для дома</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+							<div class="collection-item">
+								<img
+									src="images/collection/6.jpg"
+									alt=""
+									class="collection-item__img"
+								/>
+								<div class="collection-item__title">Купальники</div>
+								<img
+									src="images/collection/decor.svg"
+									alt=""
+									class="collection__decor"
+								/>
+							</div>
+						</div>
+						<div class="collection__scrollbar"></div>
+					</div>
+				</div>
+				<div class="season season-1">
+					<div class="container">
+						<div class="season__title">
+							<h2>Spring Summer</h2>
+							<img src="images/season/decor.svg" alt="" />
+						</div>
+						<div class="season__row">
+							<div class="season-item">
+								<div class="season-item__date">2022</div>
+								<img
+									src="images/season/1.jpg"
+									alt=""
+									class="season-item__img"
+								/>
+								<div class="season-item__info">
+									Коллекция Весна-Лето GarcomStyle обеспечит вам комфорт и
+									уверенность каждый день
+								</div>
+								<a href="#" class="season-item__link">Смотреть коллекцию</a>
+							</div>
+							<div class="season__fullImage right">
+								<img src="images/season/2.jpg" alt="" />
+							</div>
+						</div>
+						<div class="post-grid">
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/1.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Бюстгалтер Пуш-ап Flora</h3>
+								<div class="post__price">
+									11 000 ₸ <span class="post__price-old">16 000 ₸</span>
+								</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/2.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Трусы Elena</h3>
+								<div class="post__price">6 000 ₸</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/3.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Бюстгалтер без косточек Night</h3>
+								<div class="post__price">11 000</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+						</div>
+						<a href="#" class="btn season__btn">купить сейчас</a>
+					</div>
+				</div>
+				<div class="season season-2">
+					<div class="container">
+						<div class="season__title">
+							<h2>fall winter</h2>
+							<img src="images/season/decor.svg" alt="" />
+						</div>
+						<div class="season__row">
+							<div class="season-item">
+								<div class="season-item__date">2021</div>
+								<div class="season-item__img left">
+									<img src="images/season/3.jpg" alt="" />
+								</div>
+								<div class="season-item__info">
+									Коллекция Осень-зима GarcomStyle вдохновлена стилем барокко и
+									роскошными образами королев прошлого
+								</div>
+								<a href="#" class="season-item__link">Смотреть коллекцию</a>
+							</div>
+							<img src="images/season/4.jpg" alt="" class="season-img-right" />
+						</div>
+						<div class="post-grid">
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/1.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Бюстгалтер Пуш-ап Flora</h3>
+								<div class="post__price">
+									11 000 ₸ <span class="post__price-old">16 000 ₸</span>
+								</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/2.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Трусы Elena</h3>
+								<div class="post__price">6 000 ₸</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+							<div class="post">
+								<div class="post__img">
+									<img src="images/post/3.jpg" alt="" />
+									<button class="post__like">
+										<img src="images/icons/like.svg" alt="" />
+									</button>
+									<div class="post-hover">
+										<button class="post-hover__like">
+											<img src="images/icons/like.svg" alt="" />
+										</button>
+										<a href="#" class="btn post-hover__btn">в корзину</a>
+									</div>
+								</div>
+								<h3 class="post__title">Бюстгалтер без косточек Night</h3>
+								<div class="post__price">11 000</div>
+								<a href="#" class="btn post__btn">в корзину</a>
+							</div>
+						</div>
+						<a href="#" class="btn season__btn">купить сейчас</a>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__top">
+						<div class="footer__item">
+							<div class="footer__title">Соглашения</div>
+							<ul class="footer-list">
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link"
+										>Соглашение о конфиденциальности</a
+									>
+								</li>
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link"
+										>Уведомление об использовании Cookie файлов</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Помощь</div>
+							<ul class="footer-list">
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link">Оплата</a>
+								</li>
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link">Доставка</a>
+								</li>
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link">Возврат и обмен</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Контакты</div>
+							<ul class="footer-list">
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link">+7 (707) 568 99 99</a>
+								</li>
+								<li class="footer-list__item">
+									<a href="#" class="footer-list__link"
+										>garcomstyle@gmail.com</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__item">
+							<div class="footer__title">Мы в социальных сетях</div>
+							<ul class="socials">
+								<li class="socials__item">
+									<a href="#" class="socials__link">
+										<img src="images/icons/telegram.svg" alt="Телеграмм" />
+									</a>
+								</li>
+								<li class="socials__item">
+									<a href="#" class="socials__link">
+										<img src="images/icons/insta.svg" alt="Инстаграмм" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__copy">
+						©2022 GarcomStyle. Официальный интернет-магазин
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
