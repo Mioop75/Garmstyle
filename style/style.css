@@ -64,19 +64,11 @@ body {
 	font-size: 20px;
 	line-height: 1.2;
 	color: #fff;
-	height: 100%;
 	background-color: #101011;
 }
 
 body.locked {
 	overflow: hidden;
-}
-
-.wrapper {
-	width: 100%;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
 }
 
 .container {
@@ -120,7 +112,10 @@ a:hover {
 	width: 120px;
 	height: 47px;
 	position: absolute;
-	top: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transform: translateY(-4px);
 }
 
 .btn::before {
@@ -137,14 +132,18 @@ a:hover {
 
 .header {
 	background-color: #101011;
-	min-height: 116px;
+	min-height: 95px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1000;
 }
 
 .header .container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	min-height: 116px;
+	min-height: 95px;
 }
 
 .header__logo img {
@@ -258,9 +257,36 @@ a:hover {
 
 /* Main */
 
-.main {
+/* Swiper */
+
+.wrapper {
+	border: none;
+	outline: none;
+}
+
+html,
+body {
+	position: relative;
+	height: 100%;
+}
+
+.swiper-container {
+	width: 100%;
 	background-image: url("../images/bg.jpg");
-	padding: 130px 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 96px;
+}
+
+/* FullPage */
+@media (min-width: 997px) {
+	.hero {
+		height: 87vh;
+	}
+
+	.collection {
+		height: 50vh;
+	}
 }
 
 /* Hero */
@@ -271,16 +297,20 @@ a:hover {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 780px;
+}
+
+*:focus {
+	border: none;
+	outline: none;
 }
 
 .hero .container {
 	display: flex;
 	flex-direction: column;
-	height: 780px;
 	align-items: center;
 	justify-content: end;
 	padding-bottom: 41px;
+	height: 87vh;
 }
 
 .hero__img {
@@ -303,7 +333,7 @@ a:hover {
 /* Collection */
 
 .collection {
-	margin-bottom: 130px;
+	margin: 130px 0 130px;
 }
 
 .collection__grid {
@@ -311,9 +341,6 @@ a:hover {
 	gap: 24px 16px;
 	flex-wrap: wrap;
 	justify-content: center;
-}
-
-.collection-item {
 }
 
 .collection__scrollbar {
@@ -348,10 +375,6 @@ a:hover {
 	max-width: 588px;
 }
 
-.season + .season {
-	margin-top: 180px;
-}
-
 .season__title {
 	margin-bottom: 48px;
 }
@@ -379,10 +402,11 @@ a:hover {
 	font-family: var(--font-Georgia);
 	font-weight: 700;
 	font-size: 110px;
+	line-height: 40px;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	color: rgba(240, 168, 59, 0.8);
-	margin-bottom: 40px;
+	margin-bottom: 84px;
 }
 
 .season-item__img {
@@ -395,7 +419,7 @@ a:hover {
 	position: absolute;
 	left: 0;
 	height: 603px;
-	width: 42vw;
+	width: 49vw;
 }
 
 .season-item__info {
@@ -427,6 +451,10 @@ a:hover {
 
 .season-img-right {
 	margin-left: auto;
+}
+
+.posts {
+	margin-bottom: 180px;
 }
 
 .post-grid {
@@ -513,9 +541,20 @@ a:hover {
 	bottom: 16px;
 }
 
-.season__btn {
+.post-hover__btn::after {
+}
+
+.posts__btn {
 	max-width: 588px;
+	min-height: 88px;
+	font-size: 20px;
 	margin: 0 auto;
+}
+
+.posts__btn::before,
+.posts__btn::after {
+	width: 180px;
+	transform: translateY(-4px);
 }
 
 /* Footer */
@@ -566,9 +605,6 @@ a:hover {
 	margin-left: 12px;
 }
 
-.socials__link {
-}
-
 .footer__copy {
 	font-family: var(--font-Inter);
 	font-size: 13px;
@@ -589,13 +625,12 @@ a:hover {
 
 	.nav {
 		width: 100%;
-		min-height: 100%;
+		min-height: 100vh;
 		position: absolute;
 		background-color: rgba(0, 0, 0, 0.8);
-		top: -100%;
+		top: -100vh;
 		left: 0;
 		transition: all 0.3s;
-
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -652,10 +687,6 @@ a:hover {
 		font-size: 18px;
 	}
 
-	.main {
-		padding: 85px 0;
-	}
-
 	.collection {
 		margin-bottom: 75px;
 	}
@@ -690,16 +721,36 @@ a:hover {
 	.season__fullImage.right img {
 		width: 100vw;
 	}
+
+	.season-item__img.left {
+		height: 245px;
+	}
+
+	.season-item__img.left img {
+		width: auto;
+		height: 245px;
+		right: 0;
+		left: initial;
+	}
+
+	.season-2 .season-item__block {
+		margin-left: auto;
+		max-width: 273px;
+	}
+
+	.season-2 .season-item__info {
+		max-width: 273px;
+	}
 }
 
 @media (max-width: 576px) {
+	.swiper-container {
+		padding-top: 76px;
+	}
+
 	.header,
 	.header .container {
 		min-height: 76px;
-	}
-
-	.main {
-		padding: 0 0 64px;
 	}
 
 	.footer {
@@ -721,11 +772,19 @@ a:hover {
 	.hero {
 		background: none;
 		height: auto;
+		background-color: #101011;
+		padding-bottom: 63px;
+		margin-bottom: 0;
 	}
 
 	.hero .container {
 		height: auto;
 		padding-bottom: 0;
+	}
+
+	.hero__title {
+		max-width: 223px;
+		text-align: center;
 	}
 
 	.hero__img {
@@ -739,6 +798,10 @@ a:hover {
 		width: 100vw;
 		height: 534px;
 		left: 0;
+	}
+
+	.collection {
+		margin: 0 0 64px;
 	}
 
 	.collection .container {
@@ -806,8 +869,8 @@ a:hover {
 	}
 
 	.season-item__date {
-		line-height: 63px;
-		margin-bottom: 36px;
+		line-height: 47px;
+		margin-bottom: 49px;
 	}
 
 	.season__title {
@@ -832,12 +895,28 @@ a:hover {
 		font-size: 15px;
 	}
 
-	.season__btn {
+	.season-img-right {
+		height: 480px;
+	}
+
+	.season-img-right img {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100vw;
+		height: 480px;
+	}
+
+	.posts__btn {
 		display: none;
 	}
 
 	.season__row {
 		margin-bottom: 44px;
+	}
+
+	.posts {
+		margin-bottom: 64px;
 	}
 
 	.post-grid {
@@ -857,6 +936,7 @@ a:hover {
 	.post__title {
 		font-size: 12px;
 		margin-bottom: 8px;
+		min-height: 34px;
 	}
 
 	.post__price {

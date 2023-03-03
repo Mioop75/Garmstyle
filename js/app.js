@@ -19,8 +19,17 @@ function burgerFunc() {
 
 burgerFunc();
 
+if (window.innerWidth > 997) {
+	new fullpage(".fullPage", {
+		autoScrolling: true,
+		scrollHorizontally: true,
+		dragAndMove: true,
+		keyboardScrolling: true,
+	});
+}
+
 if (window.innerWidth < 576) {
-	const swiper = new Swiper(".collection .container", {
+	const collectionSwiper = new Swiper(".collection .container", {
 		wrapperClass: "collection__grid",
 		slideClass: "collection-item",
 		slidesPerView: 3,
